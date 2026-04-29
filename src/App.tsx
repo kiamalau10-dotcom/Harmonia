@@ -21,7 +21,8 @@ import {
   Menu,
   X,
   Bell,
-  Heart
+  Heart,
+  LayoutGrid
 } from 'lucide-react';
 
 // Components (We will create these)
@@ -30,11 +31,9 @@ import DashboardPage from './pages/Dashboard';
 import MateriPage from './pages/Materi';
 import GamePage from './pages/Game';
 import DiscussionPage from './pages/Discussion';
-import EduCasePage from './pages/EduCase';
 import QuizPage from './pages/Quiz';
-import ChallengePage from './pages/Challenge';
-import VideoZonePage from './pages/VideoZone';
-import AboutPage from './pages/About';
+import MazeGamePage from './pages/MazeGame';
+import StudyRoomPage from './pages/StudyRoom';
 import { DAILY_TIPS } from './constants';
 
 const NavItem = ({ to, icon: Icon, label, active, onClick }: any) => (
@@ -51,8 +50,6 @@ const NavItem = ({ to, icon: Icon, label, active, onClick }: any) => (
     <span className="text-sm">{label}</span>
   </Link>
 );
-
-import { DAILY_TIPS } from './constants';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -93,9 +90,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <NavItem to="/dashboard" icon={LayoutDashboard} label="Dashboard" active={location.pathname === '/dashboard'} onClick={() => setSidebarOpen(false)} />
           <NavItem to="/materi" icon={BookOpen} label="Materi" active={location.pathname === '/materi'} onClick={() => setSidebarOpen(false)} />
           <NavItem to="/game" icon={Gamepad2} label="Story Game" active={location.pathname === '/game'} onClick={() => setSidebarOpen(false)} />
-          <NavItem to="/circle" icon={Users} label="Circle" active={location.pathname === '/circle'} onClick={() => setSidebarOpen(false)} />
-          <NavItem to="/educase" icon={Search} label="EduCase" active={location.pathname === '/educase'} onClick={() => setSidebarOpen(false)} />
-          <NavItem to="/quiz" icon={Trophy} label="Leaderboard" active={location.pathname === '/quiz'} onClick={() => setSidebarOpen(false)} />
+          <NavItem to="/maze" icon={LayoutGrid} label="Maze Labirin" active={location.pathname === '/maze'} onClick={() => setSidebarOpen(false)} />
+          <NavItem to="/study-room" icon={Users} label="Study Room" active={location.pathname === '/study-room'} onClick={() => setSidebarOpen(false)} />
+          <NavItem to="/quiz" icon={Trophy} label="Quiz Battle" active={location.pathname === '/quiz'} onClick={() => setSidebarOpen(false)} />
         </nav>
 
         <div className="mt-6 p-4 rounded-3xl bg-white border-2 border-sidebar-border">
@@ -161,12 +158,9 @@ export default function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/materi" element={<MateriPage />} />
           <Route path="/game" element={<GamePage />} />
-          <Route path="/circle" element={<DiscussionPage />} />
-          <Route path="/educase" element={<EduCasePage />} />
+          <Route path="/maze" element={<MazeGamePage />} />
+          <Route path="/study-room" element={<StudyRoomPage />} />
           <Route path="/quiz" element={<QuizPage />} />
-          <Route path="/challenge" element={<ChallengePage />} />
-          <Route path="/videos" element={<VideoZonePage />} />
-          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Layout>
     </Router>

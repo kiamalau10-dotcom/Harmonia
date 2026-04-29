@@ -15,13 +15,52 @@ export interface Badge {
   dateUnlocked?: string;
 }
 
+export type Category = 'Dasar' | 'Lanjut' | 'Tantangan' | 'Eksperimen' | 'Sosial';
+export type ModuleType = 'video' | 'artikel' | 'slide' | 'quiz' | 'battle';
+
+export interface Slide {
+  title: string;
+  content: string;
+  imageUrl?: string;
+  audioUrl?: string;
+}
+
 export interface Materi {
   id: string;
   title: string;
-  category: string;
+  category: Category;
   content: string;
   image?: string;
-  type: 'infographic' | 'video' | 'slide' | 'quiz';
+  type: ModuleType;
+  duration?: string;
+  slides?: Slide[];
+  videoUrl?: string;
+}
+
+export interface AIQuestion {
+  id: string;
+  context: string;
+  question: string;
+  options: string[];
+  correctAnswer: string;
+  explanation: string;
+}
+
+export interface UserPresence {
+  id: string;
+  name: string;
+  avatar: string;
+  status: 'online' | 'study' | 'battle';
+  color: string;
+}
+
+export interface DiscussionRoom {
+  id: string;
+  name: string;
+  description: string;
+  memberCount: number;
+  activeNow: number;
+  category: string;
 }
 
 export interface StoryNode {

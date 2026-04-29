@@ -1,6 +1,8 @@
 {
-  "name": "Harmoni Sosial",
-  "description": "Platform belajar Sosiologi interaktif dengan gamifikasi, cerita sosial, dan tantangan harmoni.",
-  "requestFramePermissions": [],
+  "name": "Remix: Harmoni Sosial v2: Soci-AI Arena",
+  "description": "Platform belajar Sosiologi tercanggih dengan Dynamic AI Question Engine, Social Study Rooms, Labirin Hub, dan Quiz Battle Multiplayer.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
   "majorCapabilities": []
 }
